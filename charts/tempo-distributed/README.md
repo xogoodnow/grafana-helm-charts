@@ -561,7 +561,7 @@ The memcached default args are removed and should be provided manually. The sett
 | ingester.persistentVolumeClaimRetentionPolicy.whenScaled | string | `"Retain"` | Volume retention behavior when the replica count of the StatefulSet is reduced |
 | ingester.podAnnotations | object | `{}` | Annotations for ingester pods |
 | ingester.podLabels | object | `{}` | Labels for ingester pods |
-| ingester.ports | list | `[{"name":"grpc","port":9095,"service":true},{"name":"http-metrics","port":3100,"service":true}]` | Ingestor service ports |
+| ingester.ports | list | `[{"name":"grpc","port":9095,"service":true},{"name":"http-metrics","port":3100,"service":true}]` | Ingester service ports |
 | ingester.priorityClassName | string | `nil` | The name of the PriorityClass for ingester pods |
 | ingester.replicas | int | `3` | Number of replicas for the ingester |
 | ingester.resources | object | `{}` | Resource requests and limits for the ingester |
