@@ -1,6 +1,6 @@
 # tempo-distributed
 
-![Version: 1.28.0](https://img.shields.io/badge/Version-1.28.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.6.0](https://img.shields.io/badge/AppVersion-2.6.0-informational?style=flat-square)
+![Version: 1.28.1](https://img.shields.io/badge/Version-1.28.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.6.0](https://img.shields.io/badge/AppVersion-2.6.0-informational?style=flat-square)
 
 Grafana Tempo in MicroService mode
 
@@ -490,9 +490,11 @@ The memcached default args are removed and should be provided manually. The sett
 | gateway.podAnnotations | object | `{}` | Annotations for gateway pods |
 | gateway.podLabels | object | `{}` | Labels for gateway pods |
 | gateway.priorityClassName | string | `nil` | The name of the PriorityClass for gateway pods |
+| gateway.readinessProbe.failureThreshold | int | `3` |  |
 | gateway.readinessProbe.httpGet.path | string | `"/"` |  |
-| gateway.readinessProbe.httpGet.port | string | `"http-metrics"` |  |
 | gateway.readinessProbe.initialDelaySeconds | int | `15` |  |
+| gateway.readinessProbe.periodSeconds | int | `10` |  |
+| gateway.readinessProbe.successThreshold | int | `1` |  |
 | gateway.readinessProbe.timeoutSeconds | int | `1` |  |
 | gateway.replicas | int | `1` | Number of replicas for the gateway |
 | gateway.resources | object | `{}` | Resource requests and limits for the gateway |
@@ -501,6 +503,7 @@ The memcached default args are removed and should be provided manually. The sett
 | gateway.service.clusterIP | string | `nil` | ClusterIP of the gateway service |
 | gateway.service.labels | object | `{}` | Labels for gateway service |
 | gateway.service.loadBalancerIP | string | `nil` | Load balancer IP address if service type is LoadBalancer |
+| gateway.service.name | string | `"http-gateway"` | Port Name of the gateway service |
 | gateway.service.nodePort | string | `nil` | Node port if service type is NodePort |
 | gateway.service.port | int | `80` | Port of the gateway service |
 | gateway.service.type | string | `"ClusterIP"` | Type of the gateway service |
